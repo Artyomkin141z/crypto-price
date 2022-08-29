@@ -1,0 +1,28 @@
+.CryptoTable{
+    margin-top: 70px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.195);
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    
+}
+
+.headTable{
+    background-color: #e4eaff;
+    text-align: justify;
+    font-size: 15px;
+    height: 40px;
+    border-bottom:1px solid;
+}
+
+th, td{
+    padding-left: 10px;
+}
