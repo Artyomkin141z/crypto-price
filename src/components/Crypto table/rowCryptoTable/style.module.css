@@ -1,0 +1,60 @@
+.even{
+    background-color: rgb(239, 239, 239);
+    border-bottom: 1px solid #cecccc;
+}
+
+.notEven{
+    border-bottom: 1px solid #cecccc;
+}
+
+.tbody tr:hover{
+    background-color: #eef0ba;
+}
+
+.currency{
+    display: flex;
+    padding: 10px 15px;
+    align-items: center;
+    font-size: 15px;
+}
+
+.img{
+    height: 25px;
+    width: 25px;
+}
+
+.currency a{
+    padding-left: 10px;
+    color: #245684;
+}
+
+.currency a:hover{
+    color: #c82020;
+}
+
+.price{
+    max-width: 300px;
+    display: flex;
+    padding: 10px 15px;
+}
+
+
+.plus, .minus {
+    position: relative;
+    right: -5px;
+    top: -5px;
+}
+
+.priceChangePercentage24hplus, .priceChangePercentage24hminus{
+    padding: 10px 15px;
+}
+.plus, .priceChangePercentage24hplus{
+    color: #20c850;
+}
+.minus, .priceChangePercentage24hminus{
+    color: #c82020;
+}
+
+.marcetCap{
+    padding: 10px 15px;
+}

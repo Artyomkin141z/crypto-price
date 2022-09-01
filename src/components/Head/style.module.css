@@ -7,15 +7,28 @@
     left: 0;
     display: flex;
     align-items: center;
+    z-index: 999;
 
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.195);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo p{
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    color: #292929;
 }
 
 .container{
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
-    padding: 5px 10px;
+    padding: 5px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;

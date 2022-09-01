@@ -13,11 +13,11 @@ async function coinRequest(url) {
 
 // order = market_cap_desc - рыночная капитализация
 
-const coinMarkets = (page) => {
+const coinMarkets = (page, order) => {
     return ('https://api.coingecko.com/api/v3/coins/markets?'
                 +'vs_currency=usd'
-                +'&order=market_cap_desc'
-                +'&per_page=100'
+                +'&order='+order
+                +'&per_page=20'
                 +'&page='+page
                 +'&sparkline=false'
                 +'price_change_percentage=24h'

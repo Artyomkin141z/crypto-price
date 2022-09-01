@@ -7,7 +7,7 @@ function HomePage(){
         <>
             <Header />
             <CryptoTable />
-            <div className="marginForFooter"></div>
+            {/* <div className="marginForFooter"></div> */}
             <Footer />
         </>
     );
