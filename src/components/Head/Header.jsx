@@ -16,9 +16,9 @@ function Header() {
                     <a href='/'>
                         <img src={bookMark} className={styles.img} alt='bookmark'/>
                     </a>
-                    <a href='/'>
+                    {/* <a href='/'>
                         <img src={person} className={styles.img} alt='bookmark'/>
-                    </a>
+                    </a> */}
                 </div>
             </div>
         </div>

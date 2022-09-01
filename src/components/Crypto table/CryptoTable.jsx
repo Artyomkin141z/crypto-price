@@ -69,7 +69,7 @@ class CryptoTable extends Component {
                             })
                         }
                     </table>
-                    <TableSlider />
+                    <TableSlider countCoin = {this.state.countCoin}/>
                 </div>
             </div>
         );
