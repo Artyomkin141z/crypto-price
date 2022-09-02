@@ -21,8 +21,46 @@
     width: 30px;
     height: 20px;
     text-align: center;
+    user-select: none;
+}
+
+.page:hover{
+    cursor: pointer;
+    color: #c82020;
 }
 
 .active{  
     transform: scale(1.5);
+}
+
+.active:hover{
+    color: #585858;
+    cursor: default;
+}
+
+.left{
+    width: 20px;
+    height: 20px;
+
+    background-image: url('../../../constants/image/left.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+.right{
+    width: 20px;
+    height: 20px;
+    /* transform: scale(1.5); */
+
+    background-image: url('../../../constants/image/right.png');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+.left:active, .right:active{
+    transform: scale(1.1);
+}
+
+.left:hover, .right:hover{
+    cursor: pointer;
 }

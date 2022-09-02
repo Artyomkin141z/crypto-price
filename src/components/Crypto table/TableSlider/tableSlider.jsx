@@ -1,6 +1,9 @@
 import { Component } from 'react';
 import styles from './styles.module.css'
 
+// import leftSlide from '../../../constants/image/left.png';
+// import rightSlide from '../../../constants/image/right.png';
+
 class TableSlider extends Component{
     countPages = Math.ceil(this.props.countCoin/20);
     state = {
@@ -13,7 +16,11 @@ class TableSlider extends Component{
             let pageNumber = '';
             if(i > 0) pageNumber = i;
             pages.push(
-                <div className={styles.page}>
+                <div className={styles.page}
+                    onClick={() => {
+                        this.setState({activePage: pageNumber})
+                    }}
+                >
                     {pageNumber}
                 </div>
             );
@@ -26,7 +33,11 @@ class TableSlider extends Component{
         let lastPage = this.state.activePage + 4 > this.countPages ? this.countPages : this.state.activePage + 4;
         for(let i = this.state.activePage + 1; i <= lastPage; i++){         
             pages.push(
-                <div className={styles.page}>
+                <div className={styles.page}
+                    onClick={() => {
+                        this.setState({activePage: i})
+                    }}
+                >
                     {i}
                 </div>
             );
@@ -38,25 +49,25 @@ class TableSlider extends Component{
         return(
             <div className={styles.container}>
                 <div className={styles.slider}>
-                    <button
+                    <div className={styles.left}
                         onClick={() => {      
                             // this.state.activePage = activePage > 2 ? activePage-1 : 1;
                             this.setState({activePage: this.state.activePage > 2 ? this.state.activePage - 1 : 1});
                             this.forceUpdate();
                             console.log(this.state.activePage);
                         }}
-                    ></button>
-                    <div className={styles.pages}>
+                    ></div>
+                    <div className ={styles.pages}>
                         {this.printButtonPages()}
                     </div>
-                    <button
+                    <div className={styles.right}
                         onClick={() => {   
                             this.setState({activePage: this.state.activePage < this.countPages - 1 ? this.state.activePage + 1 : this.countPages});
                             this.forceUpdate();
                             // activePage = activePage < countPages - 1 ? activePage+1 : countPages;
                             console.log(this.state.activePage);
                         }}             
-                    ></button>
+                    ></div>
                 </div>
             </div>
         );
