@@ -10,10 +10,19 @@
     justify-content: space-between;
 }
 
-.pages{
+.pages{ 
     display: flex;
+
+    width: 270px;
+    height: 20px;
 }
 
-.pages div{
-    margin: 0 5px;
+.page{
+    width: 30px;
+    height: 20px;
+    text-align: center;
+}
+
+.active{  
+    transform: scale(1.5);
 }
