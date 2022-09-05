@@ -13,6 +13,7 @@ class CryptoTable extends Component {
             countCoin: 0,
             coinPage: [],
             capSort: true,
+            activePage: 1,
         }
         this.setRequest(); 
     }
@@ -21,21 +22,28 @@ class CryptoTable extends Component {
             this.setState({countCoin: result.length - 12000});
             // console.log('this.state.countCoin: ', this.state.countCoin);
         })
-        coinRequest(coinMarkets(1, 'market_cap_desc')).then(result => {
+        coinRequest(coinMarkets(this.state.activePage, 'market_cap_desc')).then(result => {
+            this.setState({coinPage: [...result]});
+        })
+    }
+    setActivePage = (active) => {
+        this.setState({activePage: active});
+        console.log('this.state.activePage: ', this.state.activePage)
+        coinRequest(coinMarkets(this.state.activePage, 'market_cap_desc')).then(result => {
             this.setState({coinPage: [...result]});
         })
     }
     render(){ 
         return(
             <div className="container">
-            {console.log('coinPage: ', this.state.countCoin)}
+            {/* {console.log('coinPage: ', this.state.countCoin)} */}
                 <div className={styles.CryptoTable}>
                     <table className={styles.table}>
                         <thead className={styles.headTable}>
                             <tr>
                                 <th className={styles.currencyColumn}>Валюта</th>
                                 <th>
-                                        Стоимость
+                                    Стоимость
                                 </th>
                                 <th>
                                     <p className={styles.buttom}
@@ -64,12 +72,17 @@ class CryptoTable extends Component {
                         {
                             this.state.coinPage.map((coin, i) => {
                                 return (
-                                    <RowCrypto coin = {coin} posInTable = {i}/>
+                                    <RowCrypto 
+                                    key={coin.id}
+                                    coin = {coin} posInTable = {i}/>
                                 );
                             })
                         }
                     </table>
-                    <TableSlider countCoin = {this.state.countCoin}/>
+                    <TableSlider 
+                    countCoin = {this.state.countCoin}
+                    setActivePage = {this.setActivePage}
+                    />
                 </div>
             </div>
         );

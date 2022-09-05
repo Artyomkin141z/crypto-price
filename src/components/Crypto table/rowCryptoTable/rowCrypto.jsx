@@ -70,17 +70,17 @@ const RowCrypto = (props) => {
                         <p>{coinInform.price}</p>
                         <sup
                         className={style[definePercentageColor(coinInform.priceChange24h)]}
-                        >{coinInform.priceChange24h}</sup>
+                        >{coinInform.priceChange24h}$</sup>
                     </div>
                 </td>
                 <td>
-                    <div className={style.marcetCap}>
-                        {splitNumberByDigits(coinInform.marcetCap)}
+                    <div className ={style.marcetCap}>
+                        {splitNumberByDigits(coinInform.marcetCap)}$
                     </div>
                 </td>
                 <td>
                     <p className={style['priceChangePercentage24h' + definePercentageColor(coinInform.priceChangePercentage24h)]}>
-                        {subtitlePlus(coinInform.priceChangePercentage24h)}
+                        {subtitlePlus(coinInform.priceChangePercentage24h)}%
                     </p>
                 </td>
             </tr>
